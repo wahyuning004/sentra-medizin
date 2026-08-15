@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#070F1E] text-slate-100 antialiased selection:bg-teal-500 selection:text-white transition-colors duration-300;
+  }
+
+  /* Light Mode Base Override */
+  .light-mode body,
+  html:not(.dark) body {
+    background-color: #F0F5FA !important;
+    color: #0F172A !important;
+  }
+}
+
+/* ==========================================================================
+   DARK MODE GLASSMORPHISM (DEFAULT)
+   ========================================================================== */
+.dark .glass-panel,
+.glass-panel {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-card,
+.glass-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   LIGHT MODE STYLING SYSTEM (PURE WHITE CARDS & VIBRANT ROYAL BLUE BUTTONS)
+   ========================================================================== */
+.light-mode .glass-panel,
+html:not(.dark) .glass-panel {
+  background: #FFFFFF !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.08) !important;
+  color: #0F172A !important;
+}
+
+.light-mode .glass-card,
+html:not(.dark) .glass-card {
+  background: #FFFFFF !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05) !important;
+  color: #0F172A !important;
+}
+
+/* Text Colors Hierarchy in Light Mode */
+html:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+html:not(.dark) .text-slate-100 {
+  color: #1E293B !important;
+}
+html:not(.dark) .text-slate-200 {
+  color: #334155 !important;
+}
+html:not(.dark) .text-slate-300 {
+  color: #475569 !important;
+}
+html:not(.dark) .text-slate-400 {
+  color: #64748B !important;
+}
+html:not(.dark) .text-slate-500 {
+  color: #64748B !important;
+}
+
+/* Brand Accent & Highlight Text */
+html:not(.dark) .text-teal-400,
+html:not(.dark) .text-teal-300 {
+  color: #1D4ED8 !important; /* Royal Blue */
+}
+html:not(.dark) .text-cyan-400,
+html:not(.dark) .text-cyan-300 {
+  color: #0284C7 !important; /* Cyan Blue */
+}
+
+/* Containers & Inner Box Backgrounds */
+html:not(.dark) .bg-slate-900,
+html:not(.dark) .bg-slate-950,
+html:not(.dark) .bg-\[\#0B192C\],
+html:not(.dark) .bg-\[\#070F1E\],
+html:not(.dark) .bg-slate-900\/80,
+html:not(.dark) .bg-slate-900\/90,
+html:not(.dark) .bg-slate-900\/60,
+html:not(.dark) .bg-slate-950\/80,
+html:not(.dark) .bg-slate-950\/60,
+html:not(.dark) .bg-slate-950\/40 {
+  background-color: #F8FAFC !important;
+}
+
+/* Border Overrides */
+html:not(.dark) .border-slate-800,
+html:not(.dark) .border-slate-800\/80,
+html:not(.dark) .border-slate-800\/90,
+html:not(.dark) .border-slate-700,
+html:not(.dark) .border-slate-700\/80 {
+  border-color: #E2E8F0 !important;
+}
+
+/* ==========================================================================
+   BUTTON LIGHT MODE OVERRIDES (NO DARK BUTTONS IN LIGHT MODE)
+   ========================================================================== */
+
+/* 1. Dark Slate Buttons transformed into Clean Light Blue / Royal Blue buttons */
+html:not(.dark) .bg-slate-800,
+html:not(.dark) .bg-slate-800\/80,
+html:not(.dark) .bg-slate-800\/90,
+html:not(.dark) .bg-slate-700,
+html:not(.dark) .bg-slate-700\/80 {
+  background-color: #EFF6FF !important;
+  color: #1D4ED8 !important;
+  border: 1px solid #BFDBFE !important;
+}
+html:not(.dark) .bg-slate-800 *,
+html:not(.dark) .bg-slate-800\/80 *,
+html:not(.dark) .bg-slate-800\/90 *,
+html:not(.dark) .bg-slate-700 * {
+  color: #1D4ED8 !important;
+}
+
+html:not(.dark) .bg-slate-800:hover,
+html:not(.dark) .bg-slate-800\/80:hover,
+html:not(.dark) .bg-slate-800\/90:hover,
+html:not(.dark) .bg-slate-700:hover {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  border-color: #1D4ED8 !important;
+}
+html:not(.dark) .bg-slate-800:hover *,
+html:not(.dark) .bg-slate-800\/80:hover *,
+html:not(.dark) .bg-slate-800\/90:hover *,
+html:not(.dark) .bg-slate-700:hover * {
+  color: #FFFFFF !important;
+}
+
+/* 2. Primary Solid Teal Buttons transformed into Vibrant Royal Blue */
+html:not(.dark) .bg-teal-400,
+html:not(.dark) .bg-teal-500 {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25) !important;
+}
+html:not(.dark) .bg-teal-400 *,
+html:not(.dark) .bg-teal-500 * {
+  color: #FFFFFF !important;
+}
+html:not(.dark) .bg-teal-400:hover,
+html:not(.dark) .bg-teal-500:hover {
+  background-color: #1E40AF !important;
+  color: #FFFFFF !important;
+}
+
+/* 3. Primary Gradient Buttons */
+html:not(.dark) .bg-gradient-to-r.from-teal-400.to-cyan-400,
+html:not(.dark) .bg-gradient-to-r.from-teal-500.to-emerald-500 {
+  background: linear-gradient(135deg, #1D4ED8 0%, #0284C7 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.3) !important;
+}
+html:not(.dark) .bg-gradient-to-r.from-teal-400.to-cyan-400 *,
+html:not(.dark) .bg-gradient-to-r.from-teal-500.to-emerald-500 * {
+  color: #FFFFFF !important;
+}
+
+/* 4. Secondary Glass Buttons */
+html:not(.dark) button.glass-card,
+html:not(.dark) a.glass-card {
+  background-color: #FFFFFF !important;
+  color: #1E293B !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05) !important;
+}
+html:not(.dark) button.glass-card:hover,
+html:not(.dark) a.glass-card:hover {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  border-color: #1D4ED8 !important;
+}
+html:not(.dark) button.glass-card:hover *,
+html:not(.dark) a.glass-card:hover * {
+  color: #FFFFFF !important;
+}
+
+/* 5. Rose / Red Logout Buttons */
+html:not(.dark) .bg-rose-500\/10,
+html:not(.dark) .bg-rose-500\/20 {
+  background-color: #FEE2E2 !important;
+  color: #DC2626 !important;
+  border: 1px solid #FCA5A5 !important;
+}
+html:not(.dark) .bg-rose-500\/10 *,
+html:not(.dark) .bg-rose-500\/20 * {
+  color: #DC2626 !important;
+}
+html:not(.dark) .text-rose-400,
+html:not(.dark) .text-rose-300 {
+  color: #DC2626 !important;
+}
+
+/* 6. Active Category Filter Pills & Tabs */
+html:not(.dark) .bg-teal-500.text-slate-950 {
+  background-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3) !important;
+}
+html:not(.dark) .bg-teal-500.text-slate-950 * {
+  color: #FFFFFF !important;
+}
+
+/* 7. Input, Select, Textarea Controls */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #CBD5E1 !important;
+}
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94A3B8 !important;
+}
+html:not(.dark) select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* 8. Text Slate-950 override */
+html:not(.dark) .text-slate-950 {
+  color: #FFFFFF !important;
+}
+
+/* Modal Backdrop */
+html:not(.dark) .fixed.inset-0.bg-slate-950\/80 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Pulse animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-slow 4s infinite ease-in-out;
+}
